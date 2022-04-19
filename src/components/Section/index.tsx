@@ -1,17 +1,28 @@
 import { FC, PropsWithChildren } from 'react';
 
 import Container from '@mui/material/Container';
+import { SxProps } from '@mui/system';
+import { Theme } from '@mui/material/styles';
 
 export interface SectionProps {
   name: string;
+  sx?: SxProps<Theme>;
 }
 
-const Section: FC<PropsWithChildren<SectionProps>> = ({ children, name }) => (
+const Section: FC<PropsWithChildren<SectionProps>> = ({
+  children,
+  name,
+  sx,
+}) => (
   <Container
     data-testid="section"
     component="section"
     id={name}
-    sx={{ height: '100vh' }}
+    sx={(theme) => ({
+      height: '100vh',
+      paddingY: 8,
+      ...sx,
+    })}
     disableGutters
   >
     {children}

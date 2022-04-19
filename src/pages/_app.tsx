@@ -1,21 +1,14 @@
 import CssBaseline from '@mui/material/CssBaseline';
-import {
-  ThemeProvider,
-  createTheme,
-  responsiveFontSizes,
-} from '@mui/material/styles';
 import type { AppProps } from 'next/app';
 
-import Layout from 'components/Layout';
-import { getDesignTokens } from 'theme';
+import Layout from 'src/components/Layout';
+import { ThemeProvider } from 'src/contexts/ThemeContext';
 
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider
-      theme={responsiveFontSizes(createTheme(getDesignTokens('dark')))}
-    >
+    <ThemeProvider>
       <CssBaseline />
       <Layout>
         <Component {...pageProps} />

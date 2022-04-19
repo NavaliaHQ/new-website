@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from 'react';
 
 import Container from '@mui/material/Container';
 
-import Navbar from 'components/Navbar';
+import Navbar from 'src/components/Navbar';
 
 export interface LayoutProps {}
 

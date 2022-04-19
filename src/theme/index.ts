@@ -3,7 +3,21 @@ import { ThemeOptions } from '@mui/material/styles/createTheme';
 
 const spacing = 8;
 
-const lightPalette: PaletteOptions = {};
+const lightPalette: PaletteOptions = {
+  background: {
+    default: '#FFFFFF',
+    paper: '#FFFFFF',
+  },
+  text: {
+    primary: '#000000',
+  },
+  primary: {
+    main: '#203AF4',
+  },
+  secondary: {
+    main: '#0C064C',
+  },
+};
 
 const darkPalette: PaletteOptions = {
   background: {
@@ -35,13 +49,14 @@ export const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
       defaultProps: {
         textTransform: 'uppercase',
         underline: 'none',
-        color: '#fff',
+        color: 'text.primary',
         fontWeight: 'bold',
       },
     },
+    MuiCssBaseline: {},
   },
   palette: {
     mode,
-    ...(mode === 'dark' ? darkPalette : lightPalette),
+    ...(mode === 'light' ? lightPalette : darkPalette),
   },
 });
