@@ -6,8 +6,9 @@ import Section from 'src/components/Section';
 const About = () => (
   <Section name="about">
     <Grid container direction="row" alignItems="center">
-      <Grid item container xs={12} sm={8}>
-        <Typography variant="h1">What is Navalia?</Typography>
+      <Grid item container xs={12} sm={10} direction="column">
+        <Typography variant="h1">What is</Typography>
+        <Typography variant="h1">Navalia?</Typography>
         <Typography>/nɑ•vɑ•liɑ/</Typography>
         <Typography marginTop={3}>
           Navalia is the latin word for dock or wharf. We liked the trust

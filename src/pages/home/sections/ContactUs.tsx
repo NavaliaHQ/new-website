@@ -9,7 +9,7 @@ import Section from 'src/components/Section';
 const ContactUs = () => (
   <Section name="contact">
     <Grid container direction="row" alignItems="center">
-      <Grid item container xs={12} sm={8} direction="column">
+      <Grid item container xs={12} sm={10} direction="column">
         <Typography variant="h1">Contact us</Typography>
         <Grid marginTop={3}>
           <TextField fullWidth name="email" label="E-mail" />
@@ -18,7 +18,7 @@ const ContactUs = () => (
           <TextField
             fullWidth
             name="text"
-            label="Write something up..."
+            label="How can we help you?"
             multiline
             minRows={15}
             maxRows={15}

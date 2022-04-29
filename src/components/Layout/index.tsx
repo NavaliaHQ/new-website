@@ -14,7 +14,7 @@ const Layout: FC<PropsWithChildren<LayoutProps>> = ({ children }) => (
       sx={{
         position: 'sticky',
         top: 0,
-        zIndex: 1,
+        zIndex: 'appBar',
         backgroundColor: 'background.default',
       }}
     >

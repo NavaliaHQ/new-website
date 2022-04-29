@@ -68,6 +68,9 @@ export const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
       fontFamily: 'Lexend, sans-serif',
       fontWeight: 'bold',
     },
+    body1: {
+      fontSize: '1.2rem',
+    },
     comment: {
       fontFamily: 'monospace',
     },
@@ -81,7 +84,6 @@ export const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
         fontWeight: 'bold',
       },
     },
-    MuiCssBaseline: {},
     MuiTextField: {
       defaultProps: {
         variant: 'filled',
@@ -92,6 +94,21 @@ export const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
         root: {
           '& .MuiFilledInput-root': {
             borderRadius: '4px',
+            backgroundColor:
+              mode === 'light'
+                ? lightPalette.text?.primary
+                : darkPalette.text?.primary,
+            transition: 'opacity 0.2s ease-in-out',
+            opacity: mode === 'light' ? 0.06 : 0.12,
+            '&:hover': {
+              opacity: mode === 'light' ? 0.1 : 0.15,
+              '@media (hover: none)': {
+                opacity: mode === 'light' ? 0.1 : 0.15,
+              },
+            },
+            '&:focus': {
+              opacity: mode === 'light' ? 0.1 : 0.15,
+            },
           },
         },
       },
