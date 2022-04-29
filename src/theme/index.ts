@@ -35,6 +35,23 @@ const darkPalette: PaletteOptions = {
   },
 };
 
+declare module '@mui/material/styles' {
+  interface TypographyVariants {
+    comment: React.CSSProperties;
+  }
+
+  // allow configuration using `createTheme`
+  interface TypographyVariantsOptions {
+    comment?: React.CSSProperties;
+  }
+}
+
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    comment: true;
+  }
+}
+
 export const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
   spacing,
   typography: {
@@ -42,6 +59,17 @@ export const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
     h1: {
       fontFamily: 'Lexend, sans-serif',
       fontWeight: 'bold',
+    },
+    h2: {
+      fontFamily: 'Lexend, sans-serif',
+      fontWeight: 'bold',
+    },
+    h3: {
+      fontFamily: 'Lexend, sans-serif',
+      fontWeight: 'bold',
+    },
+    comment: {
+      fontFamily: 'monospace',
     },
   },
   components: {
@@ -54,6 +82,20 @@ export const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
       },
     },
     MuiCssBaseline: {},
+    MuiTextField: {
+      defaultProps: {
+        variant: 'filled',
+        size: 'small',
+        InputProps: { disableUnderline: true },
+      },
+      styleOverrides: {
+        root: {
+          '& .MuiFilledInput-root': {
+            borderRadius: '4px',
+          },
+        },
+      },
+    },
   },
   palette: {
     mode,

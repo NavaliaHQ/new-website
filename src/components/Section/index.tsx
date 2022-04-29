@@ -18,11 +18,12 @@ const Section: FC<PropsWithChildren<SectionProps>> = ({
     data-testid="section"
     component="section"
     id={name}
-    sx={(theme) => ({
-      height: '100vh',
-      paddingY: 8,
+    sx={{
+      minHeight: '100vh',
+      scrollMarginTop: 144,
+      marginTop: 10,
       ...sx,
-    })}
+    }}
     disableGutters
   >
     {children}

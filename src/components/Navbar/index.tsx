@@ -2,6 +2,7 @@ import { useContext } from 'react';
 
 import DarkMode from '@mui/icons-material/DarkMode';
 import LightMode from '@mui/icons-material/LightMode';
+import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import { useTheme } from '@mui/material/styles';
@@ -9,7 +10,6 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 import { ThemeContext } from 'src/contexts/ThemeContext';
 import NavaliaLogo from 'src/components/NavaliaLogo';
-import ScrollLink from 'src/components/ScrollLink';
 
 const Navbar = () => {
   const theme = useTheme();
@@ -27,11 +27,11 @@ const Navbar = () => {
       justifyContent={isXs ? 'center' : 'space-between'}
       alignItems="center"
     >
-      <ScrollLink to="home">
+      <Link href="/#home">
         <IconButton>
           <NavaliaLogo />
         </IconButton>
-      </ScrollLink>
+      </Link>
       <Grid
         container
         columnGap={isXs ? 1 : 3}
@@ -40,10 +40,9 @@ const Navbar = () => {
         alignItems="center"
         justifyContent={isXs ? 'space-between' : 'initial'}
       >
-        <ScrollLink to="about">About us</ScrollLink>
-        <ScrollLink to="contact">Contact</ScrollLink>
-        <ScrollLink to="careers">Careers</ScrollLink>
-        <ScrollLink to="news">News</ScrollLink>
+        <Link href="/#about">About us</Link>
+        <Link href="/#blog">Articles</Link>
+        <Link href="/#contact">Contact</Link>
         <IconButton onClick={toggleTheme}>
           {themeName === 'light' ? <LightMode /> : <DarkMode />}
         </IconButton>
