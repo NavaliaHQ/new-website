@@ -14,7 +14,6 @@ const Main = () => {
   const isXs = useMediaQuery(theme.breakpoints.only('xs'));
 
   const { themeName } = useContext(ThemeContext);
-  console.log(theme);
   return (
     <Section name="home" sx={{ scrollMarginTop: theme.spacing(20) }}>
       <Grid container direction="row" alignItems="center" position="relative">

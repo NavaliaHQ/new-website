@@ -19,13 +19,8 @@ describe('<Navbar />', () => {
     expect(getByText('Contact')).toBeInTheDocument();
   });
 
-  it("Renders 'Careers' section link", () => {
+  it("Renders 'Articles' section link", () => {
     const { getByText } = render(<Navbar />);
-    expect(getByText('Careers')).toBeInTheDocument();
-  });
-
-  it("Renders 'News' section link", () => {
-    const { getByText } = render(<Navbar />);
-    expect(getByText('News')).toBeInTheDocument();
+    expect(getByText('Articles')).toBeInTheDocument();
   });
 });

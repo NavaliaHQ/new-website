@@ -68,6 +68,10 @@ export const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
       fontFamily: 'Lexend, sans-serif',
       fontWeight: 'bold',
     },
+    h5: {
+      fontFamily: 'Lexend, sans-serif',
+      fontWeight: 'bold',
+    },
     body1: {
       fontSize: '1.2rem',
     },
